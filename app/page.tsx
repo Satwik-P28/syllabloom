@@ -23,7 +23,6 @@ import {
   Upload,
   Volume2,
 } from 'lucide-react';
-import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -35,11 +34,6 @@ import {
   progressPercent,
   type ReadingDocument,
 } from '@/lib/reader';
-
-GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
 
 const SAMPLE_TEXT = `Reading should meet you where you are. A good reader does not hurry the page or hide it behind a voice. It lets your eyes and ears travel together, sentence by sentence. When attention drifts, the words remain close enough to find again. When a document matters, it should stay yours: available without an account, readable without a connection, and portable when you leave.`;
 const SAMPLE: ReadingDocument = {
@@ -153,7 +147,12 @@ export default function Home() {
     setNotice('Paused. Your place is saved.');
   }
   async function extractPdf(file: File) {
-    const task = getDocument({
+    const pdfjs = await import('pdfjs-dist');
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+      'pdfjs-dist/build/pdf.worker.min.mjs',
+      import.meta.url,
+    ).toString();
+    const task = pdfjs.getDocument({
       data: new Uint8Array(await file.arrayBuffer()),
     });
     const pdf = await task.promise;
