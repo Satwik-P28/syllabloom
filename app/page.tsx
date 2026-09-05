@@ -12,7 +12,6 @@ import {
   Download,
   FileText,
   Gauge,
-  Github,
   Highlighter,
   Library,
   Pause,
@@ -21,6 +20,7 @@ import {
   ShieldCheck,
   SkipBack,
   SkipForward,
+  Star,
   Upload,
   Volume2,
 } from 'lucide-react';
@@ -233,7 +233,7 @@ export default function Home() {
               />
             }
           >
-            <Github data-icon="inline-start" /> Star
+            <Star data-icon="inline-start" /> Star
           </Button>
           <Input
             ref={fileRef}
