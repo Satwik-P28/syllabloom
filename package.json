@@ -2,6 +2,24 @@
   "name": "syllabloom",
   "version": "0.1.0",
   "private": true,
+  "description": "Private local-first TTS reader for text, Markdown, and text-based PDFs.",
+  "license": "MIT",
+  "homepage": "https://syllabloom.nex3sss.chatgpt.site",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Satwik-P28/syllabloom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Satwik-P28/syllabloom/issues"
+  },
+  "keywords": [
+    "text-to-speech",
+    "speechify-alternative",
+    "pdf-reader",
+    "accessibility",
+    "local-first",
+    "open-source"
+  ],
   "engines": {
     "node": ">=22.13.0"
   },

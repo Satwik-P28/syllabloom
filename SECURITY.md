@@ -1,3 +1,7 @@
 # Security policy
 
-Report vulnerabilities through GitHub security advisories. Never attach private readings or documents to public issues. Syllabloom stores its library in the current browser profile; clearing site data removes it unless content was exported.
+Security fixes are applied to the latest `main` build.
+
+Please do not open a public issue for a suspected vulnerability. Use GitHub’s **Report a vulnerability** private advisory flow. Include impact, affected version, and reproduction steps. Expect an acknowledgement within seven days.
+
+Never include private documents or personal data unless strictly necessary; redact and minimize first.
