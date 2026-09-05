@@ -12,6 +12,7 @@ import {
   Download,
   FileText,
   Gauge,
+  Github,
   Highlighter,
   Library,
   Pause,
@@ -220,6 +221,20 @@ export default function Home() {
           <Badge variant="outline" className="ml-auto hidden sm:flex">
             <ShieldCheck data-icon="inline-start" /> Local library
           </Badge>
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={
+              <a
+                href="https://github.com/Satwik-P28/syllabloom"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Star Syllabloom on GitHub"
+              />
+            }
+          >
+            <Github data-icon="inline-start" /> Star
+          </Button>
           <Input
             ref={fileRef}
             type="file"
